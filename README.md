@@ -42,7 +42,13 @@ Collection of themes for Hyprland, Waybar, kitty and micro inspired by the color
 - [x] kitty
 - [x] micro
 ### Alpha
-- [ ] Hyprland (Alpha)
-### WIP
-- [ ] Obsidian (not included)
-- [ ] Firefox ()
+- [ ] Hyprland
+- [ ] Firefox
+### WIP (not included)
+- [ ] rofi
+- [ ] swaync
+- [ ] yazi
+- [ ] Spicetify
+- [ ] Obsidian
+- [ ] Vencord
+- [ ] VScode
