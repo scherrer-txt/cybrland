@@ -3,7 +3,28 @@
 Collection of themes for Hyprland, Waybar, kitty and micro inspired by the color palette popularized by **Cyberpunk 2077**.
 
 > [!CAUTION]
-> Theme for **Hyprland** is still work in progress and was not made with other users in mind. 
+> Themes for **Hyprland** and **Firefox** are still work in progress and were not made with other users in mind.
+
+> [!WARNING]
+> ### Check out my other project
+> - [Cybrpapers](https://github.com/scherrer-txt/cybrpapers), a collection of hand-made wallpapers
+> - [Cybrcolors](https://github.com/scherrer-txt/cybrcolors), a cyberpunk-inspired color palette!
+
+<table>
+<tr>
+    <td>
+        <a href="https://github.com/scherrer-txt/cybrpapers">
+            <img src="assets/cybrpapers.png" height="60" />
+        </a>
+    </td>
+    <td>
+        <a href="https://github.com/scherrer-txt/cybrcolors">
+            <img src="assets/cybrcolors.png" height="60" />
+        </a>
+    </td>
+</tr>
+</table>
+
 
 ## Prerequisites
 - `GeistMono Nerd Font` (download [from here](https://www.nerdfonts.com/font-downloads))
