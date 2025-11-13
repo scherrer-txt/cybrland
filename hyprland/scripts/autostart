@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# --- after 10s ---
+spicetify apply enable-devtools &
+dropbox &
+#kitty --class btop btop &
+#kitty --class nvtop nvtop &
+
+sleep 5
+
+# --- after 15s ---
+firefox &
+telegram &
+#openrgb -p RED.orp &
+
+sleep 5
+
+# --- after 20s ---
+discord &
+coolercontrol &

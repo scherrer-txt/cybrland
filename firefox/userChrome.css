@@ -1,0 +1,647 @@
+* {
+  font-family: "GeistMono Nerd Font";
+}
+
+:root {
+  font-family: "GeistMono Nerd Font";
+  --font-sizeS: 0.9rem; /* def: 0.85rem */
+  
+  --color-base-00: rgba(0, 0, 0, 0);
+	--color-base-05: #030408; /* bg */
+	--color-base-06: #03040899; /* bg */
+
+	--color-base-30: #F46D2A;
+
+	--color-base-40: #2570D4;
+
+	--color-base-50: #636c86; /* smaller text */
+	--color-base-51: #636c8627;
+	--color-base-52: #8c919c; /* smallest text */
+
+	--color-base-60: #1DED83; /* green */
+	--color-base-61: #1DED83aa; /* green alpha */
+
+	--color-base-70: #F75049; /* red, alt #E23435 */
+	--color-base-71: #F7504920; /* red alpha */
+	--color-base-72: #832F30; /* dividers */
+	--color-base-73: #2a0d0d; /* dividers */
+
+	--color-base-80: #9D2BF5; /* purple */
+	--color-base-81: #9D2BF527; /* purple alpha */
+
+	--color-base-90: #FB932E; /* yellow */
+	--color-base-91: #FB932E27; /* yellow alpha; dropdown bg */
+	--color-base-92: #3d1f01;
+  
+  --lwt-accent-color: var(--color-base-00) !important;
+
+  --toolbar-color: var(--color-base-70) !important;
+  --toolbarbutton-hover-background: var(--color-base-05) !important;
+  --button-background-color-active: var(--color-base-70) !important;
+  --sidebar-background-color: transparent !important;
+  --border-width: 0px !important;
+  --border-radius-small: none !important;
+  --border-radius-medium: none !important;
+  --toolbarbutton-border-radius: none !important;
+  --toolbar-bgcolor: transparent !important;
+  --toolbar-field-focus-background-color: var(--color-base-05) !important;
+  --focus-outline: none !important;
+  --chrome-content-separator-color: var(--color-base-70) !important;
+  
+  --toolbar-field-border: none !important;
+  --toolbar-field-border-color: none !important;
+  --toolbar-field-background-color: var(--color-base-06) !important;
+  
+  --toolbar-field-focus-color: var(--color-base-70) !important;
+  --toolbar-field-focus-background-color: var(--color-base-05) !important;
+  
+  --focus-outline: var(--color-base-70) !important;
+  
+  --urlbarView-hover-background: var(--color-base-73) !important;
+
+  --in-content-page-background: var(--color-base-30) !important;
+  --in-content-primary-button-background: var(--color-base-30) !important;
+  
+  --notchXs: 3px;
+  	--path-notchXs: polygon(
+    0% var(--notchXs), 
+    var(--notchXs) 0%, 
+    calc(100% - 0px) 0%, 
+    100% 0px, 
+    100% calc(100% - var(--notchXs)),
+    calc(100% - var(--notchXs)) 100%,
+    0px 100%,
+    0% calc(100% - 0px)
+  	);
+
+	--notchS: 5px;
+  	--path-notchS: polygon(
+    0% var(--notchS), 
+    var(--notchS) 0%, 
+    calc(100% - 0px) 0%, 
+    100% 0px, 
+    100% calc(100% - var(--notchS)),
+    calc(100% - var(--notchS)) 100%,
+    0px 100%,
+    0% calc(100% - 0px)
+  	);
+
+	--notchM: 10px;
+  	--path-notchM: polygon(
+    0% var(--notchM),
+    var(--notchM) 0%,
+    calc(100% - 0px) 0%,
+    100% 0px,
+    100% calc(100% - var(--notchM)),
+    calc(100% - var(--notchM)) 100%,
+    0px 100%,
+    0% calc(100% - 0px)
+  	);
+}
+
+#identity-box[pageproxystate="valid"]:is(.notSecureText, .chromeUI, .extensionPage) > .identity-box-button, #urlbar-label-box {
+  clip-path: polygon(0% 10px, 10px 0%, calc(100% - 0px) 0%, 100% 0px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0px 100%, 0% calc(100% - 0px));
+  background-color: var(--color-base-70) !important;
+  color: var(--color-base-73) !important;
+  font-size: 0.8em !important;
+}
+
+
+/* Nastavení globálního pozadí */
+#TabsToolbar {
+  display: none;
+}
+.sidebar-placesTree {
+  color: var(--color-base-70) !important;
+}
+
+#sidebar-header {
+  display: none;
+}
+
+/* Transparentní pozadí všech hlavních oblastí */
+#nav-bar,
+#tabbrowser-tabs,
+#sidebar-header,
+#sidebar-box,
+#content {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none;
+}
+
+/* Transparentní kontextové nabídky */
+menupopup,
+popup {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Transparentní tlačítka a taby */
+.toolbarbutton-1,
+.tab-background {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+#nav-bar[active="true"] {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Specificky pro aktivní okno */
+/*#main-window[active="true"] {
+    background: url("https://i.imgur.com/CTxvJzX.jpeg") no-repeat center center fixed !important;
+    background-size: cover !important;
+} */
+
+#nav-bar:not([chromehidden]),
+#navigator-toolbox:not([chromehidden]) {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Notched okraje pro všechna tlačítka */
+button, .toolbarbutton-1, .tabbrowser-tab {
+
+    clip-path: var(--path-notchM);
+    border: none !important;
+    color: var(--color-base-70) !important;
+    min-height: 30px !important;
+    min-width: 30px;
+    align-self: center;
+}
+
+#urlbar-background {
+  clip-path: var(--path-notchM);
+}
+
+.urlbar-input-box {
+  color: var(--color-base-70) !important;
+  
+  &:focused {
+   box-shadow: 0 0 0 0 !important;
+  }
+}
+
+::selection {
+    background-color: var(--color-base-70) !important; /* Barva pozadí pro vybraný text */
+    color: var(--color-base-73) !important; /* Barva textu pro vybraný text */
+}
+
+splitter {
+  cursor: ew-resize;
+  border: 0 none;
+  max-width: 1px;
+  background-color: var(--color-base-70) !important;
+}
+
+.sidebar-splitter {
+    appearance: none;
+    width: 1px;
+    background-color: var(--color-base-70) !important;
+    border: 1px var(--color-base-70) !important;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    border-style: none solid;
+}
+
+.urlbarView-url {
+    color: var(--color-base-72) !important;
+}
+
+.findbar-textbox {
+  appearance: none;
+  background-color: var(--color-base-06) !important;
+  color: var(--color-base-70) !important;
+  border: none !important;
+  padding: 10px !important;
+  clip-path: var(--path-notchM);
+}
+
+/* Našeptávač */
+.urlbarView-row[selected] {
+  background-color: var(--color-base-70) !important;
+  color: var(--color-base-05) !important;
+}
+
+/* TRANSPARENT BG */
+#browser {
+  background-color: transparent !important;
+}
+
+body {
+  background-color: rgba(0,0,0,0.1) !important;
+}
+
+:root {
+  --tabpanel-background-color: transparent !important;
+  background: var(--tabpanel-background-color) !important;
+}
+
+.browserContainer > findbar {
+  :root[lwtheme] & {
+    background-color: transparent !important;
+  }
+}
+
+#navigator-toolbox, #nav-bar {
+  background-color: var(--tabpanel-background-color) !important;
+}
+
+#browser-toolbar {
+  border: 0 !important;
+}
+
+#browser-toolbox-background {
+  background-color: transparent !important;
+}
+
+vbox#titlebar {
+  * {
+      background-color: (--tabpanel-background-color) !important;
+  }    
+}
+
+@-moz-document url-prefix("chrome://browser/content/webext-panels.xhtml") {
+    #webextpanels-window {
+        background: transparent !important;
+        background-color: var(--tabpanel-background-color) !important;
+    }
+}
+@-moz-document url-prefix("chrome:") {
+    #sidebar-box {
+        margin: 0 0 0 var(--local-separation) !important;
+        border: none !important;
+        box-shadow: none !important;
+        #sidebar-header {
+            order: 1;
+            border: none !important;
+            border-top:  1px solid var(--sidebar-border-color) !important;;
+            font-size: 1em !important;
+            #sidebar-switcher-arrow {
+                list-style-image: url('chrome://global/skin/icons/arrow-up-12.svg') !important;;
+            }
+        }
+        background: transparent !important;
+    }
+}
+
+/* remove bg from things */
+#nav-bar,
+#navigator-toolbox,
+#browser,
+tabbox#tabbrowser-tabbox,
+splitter.devtools-horizontal-splitter,
+.devtools-side-splitter,
+#tabbrowser-tabpanels,
+#sidebar-box,
+#sidebar,
+#sidebar-splitter {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Viditelný tab names ve vertical tabs */
+#tabbrowser-tabs[orient="vertical"] {
+  & .tab-label-container {
+    contain: content !important;
+  }
+}
+
+#tabbrowser-tab[orient="vertical"] {
+  .tabbrowser-tab {
+    padding-block: none !important;
+  }
+}
+
+#tabbrowser-tab[orient="vertical"] {
+  align-self: baseline !important;
+}
+
+/* No borders */
+#navigator-toolbox {
+  border-bottom: 0 !important;
+}
+
+/* Kontextové menu a popups */
+panel:where([type="arrow"]) {
+  color: var(--color-base-70) !important;
+  background-color: var(--color-base-05) !important;
+}
+
+menupopup > *:not(label):not([disabled="true"]):not(.menu-iconic-left):not(.menu-accel-container):not(image):not(:hover) {
+  color: var(--color-base-70) !important;
+  border-radius: 0 !important;
+  font-size: var(--font-sizeS) !important;
+}
+menupopup:not(#BMB_bookmarksPopup) {
+  appearance: none !important;
+  background-color: var(--color-base-05) !important;
+  border: 1px var(--color-base-70) !important;
+  border-radius: 0 !important;
+  background-origin: border-box !important;
+  background-clip: content-box, border-box !important;
+  margin: -10px !important;
+  padding: 4px 0 !important;
+  box-shadow: none !important;
+  color: var(--color-base-70) !important;
+  font-size: var(--font-sizeS) !important;
+}
+.menupopup-arrowscrollbox:not([part="arrowscrollbox"]),
+.menupopup-arrowscrollbox[exportparts="scrollbox: arrowscrollbox-scrollbox"] {
+  appearance: none !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  overflow: hidden !important;
+  border-radius: 0 !important;
+  font-size: var(--font-sizeS) !important;
+}
+
+menu,
+menuitem {
+  background-color: var(--color-base-05) !important;
+  color: var(--color-base-70) !important;
+  font-family: CommitMono, monospace !important;
+  clip-path: var(--path-notchS);
+  padding: 4px 10px !important;
+  border: none !important;
+  margin: 2px 4px !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+  font-size: var(--font-sizeS) !important;
+}
+
+menu:hover,
+menuitem:hover {
+  background-color: var(--color-base-70) !important;
+  color: var(--color-base-05) !important;
+  clip-path: var(--path-notchS);
+  border-radius: 0 !important;
+  cursor: pointer !important;
+}
+
+#appMenu-popup {
+  background-color: var(--color-base-05) !important;
+  color: var(--color-base-70) !important;
+  padding: 10px !important;
+  clip-path: var(--path-notchM);
+  border: none !important;
+  border-radius: 0 !important;
+  font-size: var(--font-sizeS) !important;
+}
+
+#appMenu-popup toolbarbutton,
+#appMenu-popup .subviewbutton,
+#appMenu-popup .panel-subview-body > * {
+  background-color: var(--color-base-05) !important;
+  color: var(--color-base-70) !important;
+  clip-path: var(--path-notchS);
+  padding: 4px 10px !important;
+  border: none !important;
+  margin: 2px 0 !important;
+  font-family: CommitMono, monospace !important;
+  border-radius: 0 !important;
+  font-size: var(--font-sizeS) !important;
+}
+
+
+.toolbar-menupopup :is(menu, menuitem), .subview-subheader, panelview .toolbarbutton-1, .subviewbutton, .widget-overflow-list .toolbarbutton-1 {
+  appearance: none;
+  margin: 0;
+  min-height: 24px;
+  padding: 0;
+  background-color: transparent;
+  flex-shrink: 0;
+  border-radius: 0 !important;
+  font-size: var(--font-sizeS) !important;
+}
+
+panel {
+  color-scheme: light dark !important;
+  border-radius: 0 !important;
+  clip-path: var(--path-notchM);
+  --panel-padding-block: 0 !important;
+  --panel-border-color: none !important;
+  --panel-width: initial !important;
+  --panel-shadow-margin: 4px !important;
+  --panel-background: none !important;
+  --panel-border-radius: 0 !important;
+  font-size: var(--font-sizeS) !important;
+}
+
+panelmultiview {
+  color: var(--color-base-70) !important;
+  background-color: var(--color-base-05) !important;  
+}
+
+#notification-popup-panel, #unified-extensions-panel {
+  color: var(--color-base-70) !important;
+  background-color: var(--color-base-05) !important;
+  font-size: var(--font-sizeS) !important;
+}
+
+dialog {
+  color: var(--color-base-05) !important;
+  font-size: var(--font-sizeS) !important;
+}
+
+button {
+  background-color: var(--color-base-05) !important;
+  &:hover {
+    color: var(--color-base-05) !important;
+    background-color: var(--color-base-90) !important;
+    cursor: pointer !important;
+  }
+}
+
+#dialogFrame, .dialogBox {
+  background-color: var(--color-base-70) !important;
+  clip-path: var(--path-notchM);
+  border-radius: 0 !important;
+}
+
+.dialogOverlay[topmost="true"], #window-modal-dialog::backdrop {
+  background-color: var(--color-base-71) !important;
+}
+
+#unified-extensions-panel #toolbaritem {
+  color: var(--color-base-70) !important;
+  font-size: var(--font-sizeS) !important;
+}
+
+/* */
+window[dialog="true"],
+.dialogBox,
+dialog,
+#commonDialog,
+#selectDialog,
+.dialogOverlay,
+#window-modal-dialog {
+  background-color: var(--color-base-70) !important;
+  color: var(--color-base-05) !important;
+  clip-path: var(--path-notchM);
+  border: none !important;
+  border-radius: 0 !important;
+  font-family: CommitMono, monospace !important;
+}
+
+/* Overlay za dialogem */
+.dialogOverlay,
+#window-modal-dialog::backdrop {
+  background-color: var(--color-base-71) !important;
+}
+
+/* Tlačítka ve spodní části dialogu */
+.dialogBox button,
+.dialog-button,
+.dialog-button-box button,
+button[dlgtype] {
+  background-color: var(--color-base-05) !important;
+  color: var(--color-base-70) !important;
+  clip-path: var(--path-notchS);
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 6px 12px !important;
+  font-family: CommitMono, monospace !important;
+}
+
+.dialogBox button:hover,
+.dialog-button:hover,
+.dialog-button-box button:hover {
+  background-color: var(--color-base-70) !important;
+  color: var(--color-base-05) !important;
+  cursor: pointer;
+}
+
+/* Headery dialogů */
+.dialogTitle,
+.dialog-header,
+.headerText,
+.caption {
+  color: var(--color-base-05) !important;
+  font-size: 1.1em !important;
+  font-weight: bold !important;
+}
+
+/* */
+
+
+/* Hover efekt */
+#appMenu-popup toolbarbutton:hover,
+#appMenu-popup .subviewbutton:hover {
+  background-color: var(--color-base-70) !important;
+  color: var(--color-base-05) !important;
+  clip-path: var(--path-notchS);
+  cursor: pointer;
+  border-radius: 0 !important;
+}
+
+/* Ikony */
+#appMenu-popup image,
+#appMenu-popup .toolbarbutton-icon {
+  fill: var(--color-base-70) !important;
+  color: var(--color-base-70) !important;
+  filter: brightness(1.1) saturate(1.2) !important;
+}
+
+/* Separator */
+#appMenu-popup menuseparator,
+#appMenu-popup .panel-subview-body > toolbarseparator {
+  border-top: 1px solid var(--color-base-72) !important;
+  opacity: 1;
+  margin: 4px 0 !important;
+}
+
+panel tolbarseparator {
+  border-top: 1px solid !important;
+  border-color: var(--color-base-72) !important;
+}
+
+menuseparator {
+  margin: 1 0 !important;
+  border-top: 1px solid var(--color-base-70) !important;
+  opacity: 1;
+}
+
+/* HISTORIE */
+#back-button, #forward-button {
+  color: var(--color-base-70) !important;
+}
+
+#searchFilter {
+  color: var(--color-base-70) !important;
+  border: none !important;
+  font-size: var(--font-sizeS) !important;
+}
+
+.placesTree {
+  color: var(--color-base-70) !important;
+  background-color: var(--color-base-05) !important;
+
+  &:hover {
+    color: var(--color-base-05) !important;
+    background-color: var(--color-base-70) !important;
+    cursor: pointer !important;
+  }
+}
+
+treecol {
+  background-color: var(--color-base-05) !important;
+  color: var(--color-base-70) !important;
+}
+
+#placesToolbar {
+  background-color: var(--color-base-05) !important;
+  border-bottom: none !important;
+}
+
+#editBMPanel_locationField, #editBMPanel_namePicker {
+border: 1px solid #F75049 !important;
+border-radius: 0 !important;
+background-color: var(--color-base-05) !important;
+color: var(--color-base-70) !important;
+}
+
+#placesView {
+  color: var(--color-base-70) !important;
+}
+
+#placesView,
+#placeContent {
+  background-color: var(--color-base-05) !important;
+  color: var(--color-base-70) !important;
+}
+
+treechildren::-moz-tree-row(selected),
+treechildren::-moz-tree-row(selected, focus) {
+  background-color: var(--color-base-70) !important;
+  color: var(--color-base-05) !important;
+  clip-path: var(--path-notchS); /* pokud chceš notchy i tady */
+}
+
+treechildren::-moz-tree-cell-text(selected),
+treechildren::-moz-tree-cell-text(selected, focus) {
+  color: var(--color-base-05) !important;
+}
+
+/* WINDOWS */
+@media (-moz-platform: windows) {
+  :root {
+    #main-window {
+    background: url("https://i.imgur.com/CTxvJzX.jpeg") no-repeat left center fixed !important;
+    background-size: cover !important;
+    border: none;
+    }
+  }
+}
+
+.browser-toolbar {
+  border: 0px !important;
+}

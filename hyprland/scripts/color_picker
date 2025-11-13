@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+# Hyprpicker Color Picker Script with Rofi integration (HEX, RGB, HSL)
+
+color=$(hyprpicker -a | tr -d '\n')
+
+[[ -z "$color" ]] && exit 0
+
+echo "Picked: $color"
+
+r_hex="${color:1:2}"
+g_hex="${color:3:2}"
+b_hex="${color:5:2}"
+
+r_dec=$((16#$r_hex))
+g_dec=$((16#$g_hex))
+b_dec=$((16#$b_hex))
+
+hsl=$(awk -v r="$r_dec" -v g="$g_dec" -v b="$b_dec" '
+  function max(x,y){return x>y?x:y}
+  function min(x,y){return x<y?x:y}
+  BEGIN {
+    r/=255; g/=255; b/=255;
+    maxv=max(r,max(g,b)); minv=min(r,min(g,b));
+    l=(maxv+minv)/2;
+    if (maxv==minv) {h=s=0}
+    else {
+      d=maxv-minv;
+      s=l>0.5 ? d/(2-maxv-minv) : d/(maxv+minv);
+      if (maxv==r) h=(g-b)/d + (g<b?6:0);
+      else if (maxv==g) h=(b-r)/d + 2;
+      else h=(r-g)/d + 4;
+      h/=6;
+    }
+    printf("H:%.0f° S:%.0f%% L:%.0f%%", h*360, s*100, l*100);
+  }')
+
+rofi_list=$(printf "%s\nRGB: %d, %d, %d\n%s" "$color" "$r_dec" "$g_dec" "$b_dec" "$hsl")
+
+selection=$(echo "$rofi_list" | rofi -dmenu -p "Copy color as:" -theme-str 'window {width: 20em;}')
+
+case "$selection" in
+  "$color")
+    echo -n "$color" | xclip -selection clipboard
+    notify-send "Copied HEX" "$color"
+    ;;
+  "RGB: $r_dec, $g_dec, $b_dec")
+    rgb="RGB: $r_dec, $g_dec, $b_dec"
+    echo -n "$rgb" | xclip -selection clipboard
+    notify-send "Copied RGB" "$rgb"
+    ;;
+  "$hsl")
+    echo -n "$hsl" | xclip -selection clipboard
+    notify-send "Copied HSL" "$hsl"
+    ;;
+  *)
+    notify-send "Canceled" "No color copied"
+    ;;
+esac

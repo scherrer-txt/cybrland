@@ -1,0 +1,85 @@
+[
+  /* BAR 1 */
+  {
+    "include": "~/.config/waybar/modules.jsonc",
+    "height": 31,
+    "layer": "top",
+    "output": "HDMI-A-1",
+    "mode": "dock",
+    "exclusive": true,
+    "passtrough": false,
+    "gtk-layer-shell": true,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-bottom": 0,
+    "margin-right": 0,
+    "on-scroll-threshold": 1,
+
+    "modules-left": [
+      "custom/arch",
+      "custom/arrow-left-re0",
+      "hyprland/workspaces",
+      "custom/arrow-left-no1",
+      "custom/updates"
+    ],
+
+    "modules-center": [
+      "custom/arrow-right-gr0",
+      "custom/music",
+      "custom/arrow-left-gr0"
+    ],
+
+    "modules-right": [
+      "custom/arrow-right-no1",
+      "network",
+      "hyprland/language",
+      "pulseaudio"
+    ]
+  },
+
+  /* BAR 2 */
+  {
+    "include": "~/.config/waybar/modules.jsonc",
+    "height": 31,
+    "layer": "top",
+    "output": "DP-2",
+    "mode": "dock",
+    "exclusive": true,
+    "passtrough": false,
+    "gtk-layer-shell": true,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-bottom": 0,
+    "margin-right": 0,
+    "on-scroll-threshold": 1,
+
+    "modules-left": [
+      "custom/arch",
+      "custom/arrow-left-re0",
+      "hyprland/workspaces",
+      "custom/arrow-left-no1"
+    ],
+
+    "modules-center": [
+      "custom/arrow-right-no1",
+      "clock#date",
+
+      "custom/arrow-right-re0",
+      "hyprland/window",
+      "custom/arrow-left-re0",
+
+      "clock#time",
+      "custom/arrow-left-no1"
+    ],
+
+    "modules-right": [
+      "custom/arrow-right-no1",
+      "memory",
+      "temperature#gpu",
+      "temperature#cpu",
+      "custom/brightness",
+      "custom/notifications",
+      "tray"
+    ]
+  }
+]

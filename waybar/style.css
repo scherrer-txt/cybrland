@@ -1,0 +1,392 @@
+/* === VARIABLES === */
+
+  @define-color no0 #030408;
+  @define-color no1 #05070D;
+  @define-color no2 #0A0E1A;
+
+  @define-color re0 #F24848;
+  @define-color re1 #631F21;
+  @define-color re2 #331215;
+
+  @define-color gr0 #30F291;
+  @define-color gr1 #15633F;
+  @define-color gr2 #0C3423;
+
+  @define-color ye0 #F2D230;
+  @define-color ye1 #635618;
+  @define-color ye2 #332D10;
+
+  @define-color bl0 #3061F2;
+  @define-color bl1 #152966;
+  @define-color bl2 #0C1737;
+
+  @define-color pu0 #A130F2;
+  @define-color pu1 #421666;
+  @define-color pu2 #230D37;
+
+  @define-color cy0 #29BECC;
+  @define-color cy1 #124E56;
+  @define-color cy2 #0B292F;
+
+  @define-color wh0 #898D99;
+  @define-color wh1 #393B42;
+  @define-color wh2 #1E2025;
+
+  @define-color me0 #4D5A80;
+  @define-color me1 #212638;
+  @define-color me2 #0D1120;
+
+  @define-color or0 #F23D18;
+  @define-color or1 #631B0E;
+  @define-color or2 #330F0B;
+
+
+/* === GLOBAL === */
+
+  * {
+    font-family: GeistMono Nerd Font;
+    font-size: 15px;
+    letter-spacing: -0.05em;
+    font-weight: 400;
+    min-height: 0;
+  }
+
+  window#waybar {
+    background: transparent;
+    opacity: 1;
+  }
+
+  window#waybar.hidden {
+    opacity: 0;
+  }
+
+
+/* === MODULE DEFAULTS === */
+
+  #custom-updates,
+  #custom-music,
+  #custom-arch,
+  #workspaces,
+  #window {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0 16px;
+    color: @re0;
+  }
+
+
+/* === BUTTON SIZE === */
+
+  #tray,
+  #custom-brightness,
+  #language,
+  #bluetooth,
+  #custom-gpu-usage,
+  #custom-wf-recorder,
+  #custom-cava,
+  #custom-updates,
+  #custom-notifications,
+  #pulseaudio,
+  #network,
+  #cpu,
+  #memory,
+  #temperature,
+  #temperature.cpu,
+  #temperature.gpu,
+  #battery,
+  #backlight {
+    padding: 0 16px;
+    min-width: 15px;
+  }
+
+
+/* === POWERLINE ARROWS === */
+
+  /* You have to overwrite the USERNAME in paths to the SVGs */
+  #custom-arrow-left-no1 {
+    background-image: url('/home/USERNAME/.config/waybar/svg/no1-left.svg');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #custom-arrow-right-no1 {
+    background-image: url('/home/USERNAME/.config/waybar/svg/no1-right.svg');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #custom-arrow-left-re0 {
+    background-image: url('/home/USERNAME/.config/waybar/svg/re0-left.svg');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: @no1;
+  }
+  #custom-arrow-right-re0 {
+    background-image: url('/home/USERNAME/.config/waybar/svg/re0-right.svg');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: @no1;
+  }
+
+  #custom-arrow-left-gr0 {
+    background-image: url('/home/USERNAME/.config/waybar/svg/gr0-left.svg');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #custom-arrow-right-gr0 {
+    background-image: url('/home/USERNAME/.config/waybar/svg/gr0-right.svg');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+
+/* === ARCH LOGO === */
+
+  #custom-arch {
+    color: @no0;
+    background-color: @re0;
+    font-weight: bold;
+  }
+
+  #custom-arch:hover {
+    color: @no0;
+    background-color: @gr0;
+  }
+
+
+/* === WORKSPACES === */
+
+  #workspaces {
+    background-color: @no1;
+    border: none;
+  }
+
+  #workspaces button {
+    border-radius: 0;
+    margin: 0;
+    font-weight: bolder;
+    min-width: 15px;
+    color: @re0;
+    background: transparent;
+  }
+
+  #workspaces button label {
+    font-size: 15px;
+    margin: -10px 0px;
+    padding: 0 4px;
+    color: @re0;
+  }
+
+  #workspaces button.active label {
+    color: @gr0;
+  }
+
+  #workspaces button:hover {
+    background-color: @re2;
+  }
+
+  #workspaces button:hover label {
+    color: @re0;
+  }
+
+  #workspaces button.active:hover {
+    background-color: @gr2;
+  }
+
+  #workspaces button.active label {
+    color: @gr0;
+  }
+
+  #workspaces button.urgent {
+    color: @ye0;
+    background-color: @ye2;
+  }
+
+
+/* === CLOCKS === */
+
+  #clock.time,
+  #clock.date {
+    color: @re0;
+    background-color: @no1;
+    padding: 0 32px;
+  }
+
+  #clock.time:hover,
+  #clock.date:hover {
+    color: @re0;
+    background-color: @re2;
+  }
+
+
+/* === SYSTEM METRICS === */
+
+  #cpu,
+  #memory,
+  #temperature,
+  #temperature.cpu,
+  #temperature.gpu {
+    color: @re0;
+    background-color: @no1;
+  }
+
+  #temperature.critical {
+    color: @no0;
+    background-color: @ye0;
+  }
+
+  #cpu:hover,
+  #memory:hover,
+  #temperature:hover,
+  #temperature.cpu:hover,
+  #temperature.gpu:hover,
+  #temperature.critical:hover {
+    color: @re0;
+    background-color: @re2;
+  }
+
+
+/* === NETWORK & AUDIO === */
+
+  #network {
+    background-color: @no1;
+    color: @re0;
+  }
+
+  #network.disconnected {
+    color: @wh0;
+    background-color: @or0;
+  }
+
+  #network.linked {
+    color: @gr0;
+    background-color: @no1;
+  }
+
+  #pulseaudio {
+    color: @re0;
+    background-color: @no1;
+  }
+
+  #pulseaudio.muted {
+    color: @re1;
+  }
+
+  #network:hover,
+  #pulseaudio:hover {
+    color: @re0;
+    background-color: @re2;
+  }
+
+  #pulseaudio.muted:hover {
+    color: @re1;
+    background-color: @re2;
+  }
+
+
+/* === MUSIC === */
+
+  #custom-music {
+    background-color: @gr0;
+    color: @no0;
+    padding: 0 32px;
+    border: none;
+  }
+
+
+/* === NOTIFICATIONS === */
+
+  #custom-notifications {
+    background-color: @no1;
+    color: @re1;
+    font-size: 20px;
+  }
+
+  #custom-notifications:hover {
+    color: @re0;
+    background-color: @re1;
+  }
+
+  #custom-notifications.dnd-none {
+    color: @re1;
+  }
+  #custom-notifications.dnd-none:hover {
+    color: @re1;
+    background-color: @re2;
+  }
+
+/* === UPDATES === */
+
+  #custom-updates {
+    color: @gr0;
+    font-size: 20px;
+    margin: 0 20px;
+  }
+
+  #custom-updates:hover {
+    background-color: @gr1;
+  }
+
+
+/* === MISC === */
+
+  #custom-cava {
+    color: @re0;
+    background-color: @no1;
+  }
+
+  #custom-wf-recorder {
+    color: @re0;
+    background-color: @no1;
+  }
+
+  #bluetooth {
+    color: @re0;
+    background-color: @no1;
+  }
+
+  #language {
+    color: @re0;
+    background-color: @no1;
+  }
+
+  #custom-brightness {
+    background-color: @no1;
+  }
+  #custom-brightness:hover {
+    background-color: @re1;
+  }
+
+  #custom-brightness.max { color: @re0; }
+  #custom-brightness.high { color: @ye0; }
+  #custom-brightness.mid { color: @wh0; }
+  #custom-brightness.low { color: @cy0; }
+  #custom-brightness.min { color: @re0; }
+
+  #tray {
+    color: @re0;
+    background-color: @no1;
+  }
+
+  #custom-cava:hover,
+  #custom-wf-recorder:hover,
+  #bluetooth:hover,
+  #language:hover {
+    color: @re0;
+    background-color: @re2;
+  }
+
+/* === WINDOW === */
+
+  #window {
+    color: @no0;
+    background-color: @re0;
+    padding: 0 32px;
+    border: none;
+  }
