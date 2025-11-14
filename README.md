@@ -24,6 +24,8 @@ Collection of themes for Waybar, Hyprland, kitty, micro, Starship, cava, btop an
             <img src="assets/kitty.png" height="60" />
         </a>
     </td>
+</tr>
+<tr>
     <td>
         <a href="./micro/about-micro.md">
             <img src="assets/micro.png" height="60" />
@@ -39,6 +41,8 @@ Collection of themes for Waybar, Hyprland, kitty, micro, Starship, cava, btop an
             <img src="assets/cava.png" height="60" />
         </a>
     </td>
+</tr>
+<tr>
     <td>
         <a href="./btop/about-btop.md">
             <img src="assets/btop.png" height="60" />
