@@ -49,11 +49,12 @@ micro ~/.config/systemd/user/random-wallpaper.service
 [Unit]
 Description=Change wallpaper randomly using hyprpaper
 After=hyprpaper.service graphical-session.target
+Requires=hyprpaper.service
 PartOf=hypr-session.target
 
 [Service]
-ExecStart=%h/.config/hypr/scripts/random_wallpaper
 Type=oneshot
+ExecStart=%h/.config/hypr/scripts/random_wallpaper
 
 [Install]
 WantedBy=hypr-session.target
@@ -73,7 +74,7 @@ Description=Periodic random wallpaper change
 PartOf=hypr-session.target
 
 [Timer]
-OnBootSec=1min
+OnBootSec=2s
 OnUnitActiveSec=15m
 Unit=random-wallpaper.service
 Persistent=true
