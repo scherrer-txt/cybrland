@@ -7,15 +7,15 @@ Color palette for Kitty inspired by the color palette popularized by **Cyberpunk
 <img src="../assets/inspiration/insp-micro.png" width="800"/></td>
 
 ## What to do
-### Create theme file:
+### 1. Create theme file
 
 ```sh
 micro ./.config/kitty/themes/cybrkitty.conf
 ```
 
-### Insert [cybrkitty.conf](/kitty/cybrkitty.conf)
+### 2. Insert [cybrkitty.conf](/kitty/cybrkitty.conf)
 
-### Set theme:
+### 3. Set theme
 ```sh
 include themes/cybrkitty.conf
 ```

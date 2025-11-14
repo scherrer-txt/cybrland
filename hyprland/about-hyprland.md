@@ -10,13 +10,14 @@ Theme for Hyprland window manager inspired by the color palette popularized by *
 <img src="../assets/inspiration/insp-colors.png" width="800"/></td>
 
 ## What to do
-### Install `GeistMono Nerd Font` ([from here](https://www.nerdfonts.com/font-downloads))
+### 1. Install `GeistMono Nerd Font` ([from here](https://www.nerdfonts.com/font-downloads))
 
-### Download `hyprland.conf`, `theme.conf` and `vars.conf`
+### 2. Download `hyprland.conf`, `theme.conf` and `vars.conf`
   - `hyprland.conf` contains all **functional** setting, and is linked to`theme.conf`
   - `theme.conf` contains all **decorations**, and is linked to `vars.conf`
   - `vars.conf` contains all **variables** (*colors, gaps, font, blur etc.*)
-### File structure should look like this
+
+### 3. File structure should look like this
 ```code
 hypr/
   hyprland.conf
@@ -24,23 +25,25 @@ hypr/
     theme.conf
     vars.conf
 ```
-### Create a backup of your old config and theme
+### 4. Create a backup of your old config and theme
 
 ## Random wallpaper (WIP)
-### Copy [random_wallpaper](../hyprland/scripts/random_wallpaper) script inside your hypr/script folder
+> This script cycles wallpapers in a pseudo-random pattern (never shows the same wallpaper twice in a row, hence pseudo-random).
 
-### Make it executable
+### 1. Copy [random_wallpaper](../hyprland/scripts/random_wallpaper) script inside your hypr/script folder
+
+### 2. Make it executable
 ```sh
 chmod +x ~/.config/hypr/scripts/random_wallpaper
 ```
 
-### Create a service:
+### 3. Create a service
 
 ```sh
 micro ~/.config/systemd/user/random-wallpaper.service
 ```
 
-### Paste inside:
+### 4. Paste inside
 
 ```toml
 [Unit]
@@ -51,13 +54,13 @@ ExecStart=%h/.config/hypr/scripts/random_wallpaper
 Type=oneshot
 ```
 
-### Create a timer:
+### 5. Create a timer
 
 ```sh
 micro ~/.config/systemd/user/random-wallpaper.timer
 ```
 
-### Paste inside:
+### 6. Paste inside
 
 ```toml
 [Unit]
@@ -73,7 +76,7 @@ Unit=random-wallpaper.service
 WantedBy=timers.target
 ```
 
-### Run:
+### 7. Run
 
 ```sh
 systemctl --user daemon-reload

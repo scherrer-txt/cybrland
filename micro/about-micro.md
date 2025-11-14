@@ -7,15 +7,15 @@ Color flavor for Micro inspired by the color palette popularized by **Cyberpunk 
 <img src="../assets/inspiration/insp-micro.png" width="800"/></td>
 
 ## What to do
-### Create theme file:
+### 1. Create theme file
 
 ```sh
 micro ./.config/micro/colorschemes/cybrmicro.micro
 ```
 
-### Insert [cybrmicro.micro](../micro/cybrmicro.micro)
+### 2. Insert [cybrmicro.micro](../micro/cybrmicro.micro)
 
-### Set theme:
+### 3. Set theme
 ```sh
 micro
 # press CTRL+E
