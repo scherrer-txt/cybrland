@@ -48,10 +48,15 @@ micro ~/.config/systemd/user/random-wallpaper.service
 ```toml
 [Unit]
 Description=Change wallpaper randomly using hyprpaper
+After=hyprpaper.service graphical-session.target
+PartOf=hypr-session.target
 
 [Service]
 ExecStart=%h/.config/hypr/scripts/random_wallpaper
 Type=oneshot
+
+[Install]
+WantedBy=hypr-session.target
 ```
 
 ### 5. Create a timer
@@ -65,15 +70,16 @@ micro ~/.config/systemd/user/random-wallpaper.timer
 ```toml
 [Unit]
 Description=Periodic random wallpaper change
+PartOf=hypr-session.target
 
 [Timer]
 OnBootSec=1min
 OnUnitActiveSec=15m
-Persistent=true
 Unit=random-wallpaper.service
+Persistent=true
 
 [Install]
-WantedBy=timers.target
+WantedBy=hypr-session.target
 ```
 
 ### 7. Run
