@@ -10,7 +10,9 @@ Custom themes for singular webpages for the Stylus extension inspired by the col
 ### 1. Download and install [Stylus](https://github.com/openstyles/stylus)
 ### 2. Click the extension icon in your toolbar
 ### 3. Click on "Write style for: [name of the website]"
-### 4. Paste css from repo
+### 4. Paste theme inside
+#### Themes:
+- [Cybrspace.online](../stylus/cyberspace.online)
 
 ## Status
 ### Done
