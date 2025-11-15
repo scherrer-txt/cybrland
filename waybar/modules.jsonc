@@ -140,7 +140,7 @@
     "network": {
         "format-wifi": "",
         "format-ethernet": "",
-        "on-click": "~/.config/hypr/scripts/toggle_scratchpad.sh nm-connection-editor 'nm-connection-editor'",
+        "on-click": "~/.config/hypr/scripts/toggle_scratchpad.sh nm-connection-editor 'nm-connection-editor' scratchpad-large",
         "tooltip-format-wifi": "Network: <b>{essid}</b>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>\n<span foreground='#eed49f'> {bandwidthDownBytes}</span> <span foreground='#b7bdf8'> {bandwidthUpBytes}</span>",
         "tooltip-format-ethernet": "Network: <b>{essid}</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>\n<span foreground='#eed49f'> {bandwidthDownBytes}</span> <span foreground='#b7bdf8'> {bandwidthUpBytes}</span>",
         "format-linked": "󰈀 {ifname} (No IP)",
@@ -155,7 +155,7 @@
         "format-muted": "  MUTE",
         "interval": 1,
         "tooltip-format": "{desc}, {volume}%",
-        "on-click": "~/.config/hypr/scripts/toggle_scratchpad.sh org.pulseaudio.pavucontrol 'pavucontrol'",
+        "on-click": "~/.config/hypr/scripts/toggle_scratchpad.sh org.pulseaudio.pavucontrol 'pavucontrol' scratchpad-large",
         "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
         "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+",
@@ -255,7 +255,6 @@
     },
 
 /* WINDOW */
-/* You have to edit the NAME of your vault for Obsidian to work */
     "hyprland/window": {
         "format": "{}",
         "max-length": 80,
@@ -263,7 +262,7 @@
         "(.*) — Mozilla Firefox": "$1 󰈹",
         "(.*) - Visual Studio Code": "$1 󰨞",
         "(.*)Spotify": "Spotify 󰓇",
-        "(.*) - NAME - Obsidian v1.10.3": "Obsidian ",
+        "(.*) - Wulfrion - Obsidian v1.10.3": "Obsidian ",
         "(.*)Steam": "Steam 󰓓"
         },
         "separate-outputs": false
