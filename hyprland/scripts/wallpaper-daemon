@@ -4,6 +4,11 @@ WALLPAPER_DIR="$HOME/.config/hypr/theme/walls"
 LAST_WALL="$HOME/.cache/last_wallpaper.txt"
 INTERVAL=900   # 900 sec = 15 min
 
+# Run this after every change:
+# systemctl --user daemon-reload                                                                                                            17:39
+# systemctl --user restart wallpaper-daemon.service
+# systemctl --user status wallpaper-daemon.service
+
 choose() {
     find "$WALLPAPER_DIR" -type f | shuf -n 1
 }
