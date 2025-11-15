@@ -1,20 +1,23 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+start_after() {
+    sleep "$1"
+    shift
+    "$@" &
+}
+
+# --- after 0s ---
+start_after 0 #program 1
+start_after 0 #program 2
+
+# --- after 5s ---
+start_after 5 #program 3
 
 # --- after 10s ---
-spicetify apply enable-devtools &
-dropbox &
-#kitty --class btop btop &
-#kitty --class nvtop nvtop &
+start_after 15 #program 4
+start_after 15 #program 5
+start_after 15 #program 6
 
-sleep 5
-
-# --- after 15s ---
-firefox &
-telegram &
-#openrgb -p RED.orp &
-
-sleep 5
-
-# --- after 20s ---
-discord &
-coolercontrol &
+# daemon should not quit instantly or systemd restarts it
+# so we just block forever to keep systemd satisfied
+tail -f /dev/null

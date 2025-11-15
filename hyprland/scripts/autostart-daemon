@@ -1,0 +1,12 @@
+[Unit]
+Description=Hyprland autostart daemon
+After=graphical-session.target
+PartOf=hypr-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.config/hypr/scripts/autostart-daemon
+Restart=no
+
+[Install]
+WantedBy=hypr-session.target
