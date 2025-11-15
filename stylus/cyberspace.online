@@ -1,0 +1,194 @@
+/* ==UserStyle==
+@name           cyberspace.online
+@namespace      github.com/scherrer-txt/stylus/cyberspace.online
+@version        1.0.0
+@description    Theme for Cyberspace.online, based on my Cybrcolors palette
+@author         scherrer-txt
+==/UserStyle== */
+@-moz-document url-prefix("https://cyberspace.online/") {
+    :root {
+
+    /* COLORS */
+        --no0: #030408;
+        --no1: #05070D;
+        --no2: #0A0E1A;
+
+        --re0: #F24848;
+        --re1: #631F21;
+        --re2: #331215;
+
+        --gr0: #30F291;
+        --gr1: #15633F;
+        --gr2: #0C3423;
+
+        --ye0: #F2D230;
+        --ye1: #635618;
+        --ye2: #332D10;
+
+        --bl0: #3061F2;
+        --bl1: #152966;
+        --bl2: #0C1737;
+
+        --pu0: #A130F2;
+        --pu1: #421666;
+        --pu2: #230D37;
+
+        --cy0: #29BECC;
+        --cy1: #124E56;
+        --cy2: #0B292F;
+
+        --wh0: #898D99;
+        --wh1: #393B42;
+        --wh2: #1E2025;
+
+        --me0: #4D5A80;
+        --me1: #212638;
+        --me2: #0D1120;
+
+        --or0: #F23D18;
+        --or1: #631B0E;
+        --or2: #330F0B;
+        
+        --tr0: #03040800;
+        --tr1: #03040830;
+        
+    /* BEVELS */
+        --notchXs: 3px;
+        --path-notchXs: polygon(
+        0% var(--notchXs), 
+        var(--notchXs) 0%, 
+        calc(100% - 0px) 0%, 
+        100% 0px, 
+        100% calc(100% - var(--notchXs)),
+        calc(100% - var(--notchXs)) 100%,
+        0px 100%,
+        0% calc(100% - 0px)
+        );
+
+        --notchS: 5px;
+        --path-notchS: polygon(
+        0% var(--notchS), 
+        var(--notchS) 0%, 
+        calc(100% - 0px) 0%, 
+        100% 0px, 
+        100% calc(100% - var(--notchS)),
+        calc(100% - var(--notchS)) 100%,
+        0px 100%,
+        0% calc(100% - 0px)
+        );
+
+        --notchM: 10px;
+        --path-notchM: polygon(
+        0% var(--notchM),
+        var(--notchM) 0%,
+        calc(100% - 0px) 0%,
+        100% 0px,
+        100% calc(100% - var(--notchM)),
+        calc(100% - var(--notchM)) 100%,
+        0px 100%,
+        0% calc(100% - 0px)
+        );
+    
+    /* RADIUS */
+        --radius-sm: 0px !important;
+        --radius-md: 0px !important;
+        --radius-lg: 0px !important;
+    
+    }
+    /* TRANSPARENCY */
+        body, .bg-bg, .sidebar, .tiptap-wrapper {
+            background-color: var(--tr0) !important;
+            /*border: none !important;*/
+        }
+
+    /* FOOTER */
+        #footer {
+            background-color: var(--re0) !important;
+            color: var(--re2) !important;
+            border: none !important;
+            height: 1.5rem !important;
+            padding: 0rem 0;
+         
+         .px-6.flex {
+             align-items: center !important;
+             height: 100%;
+            }
+        }
+
+    /* SIDEBAR */    
+        .sidebar, .py-3 {
+            border-color: var(--tr0) !important;
+        }
+
+        button .text-bg {
+            color: cyan;
+        }
+
+    /* LINKS */
+        .terminal-box {
+            border: none;
+            background-color:var(--tr1) !important;
+            clip-path: var(--path-notchM);
+        }
+        .terminal-box:hover {
+            background-color: var(--no1) !important;
+
+            a:hover {
+                color: var(--re0) !important;
+            }
+        }
+
+        .ring-2 {
+            border: none;
+        }
+
+        .ring-fg {
+            background-color: var(--re2) !important;
+
+            &:hover {
+
+            background-color: var(--re2) !important;
+            }
+        }
+
+    /* WRITE */
+        .tiptap-wrapper {
+            background-color: var(--tr0) !important;
+        }
+
+    /* BUTTONS */
+
+        a.border {
+            border: none;
+            color: #331215 !important;
+            background-color: var(--re0) !important;
+            clip-path: var(--path-notchS);
+
+            &:hover {
+                color: var(--re0) !important;
+                background-color: var(--re2) !important;
+            }
+        }
+
+        .profile-box-inverted:hover {
+            background-color: var(--re0) !important;
+        }
+        .profile-box-inverted .border-fg-dim,
+        .profile-box-inverted .text-fg-dim {
+            opacity: 1 !important;
+        }
+
+        .profile-box-inverted {
+            background-color: var(--re0) !important;
+            color:var(--re2);
+        }
+        .profile-box-inverted .text-fg-dim {
+            color: var(--re2);
+        }
+
+        .profile-box-inverted button:hover {
+            color: var(--re0)  !important;
+            background-color: var(--re2) !important;
+        }
+
+    }

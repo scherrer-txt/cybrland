@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+WALLPAPER_DIR="$HOME/.config/hypr/theme/walls"
+LAST_WALL="$HOME/.cache/last_wallpaper.txt"
+INTERVAL=900   # 900 sec = 15 min
+
+choose() {
+    find "$WALLPAPER_DIR" -type f | shuf -n 1
+}
+
+wait_for_hyprpaper() {
+    while ! hyprctl hyprpaper listpreloaded &>/dev/null; do
+        sleep 0.5
+    done
+}
+
+wait_for_hyprpaper
+
+while true; do
+    new=$(choose)
+
+    if [ -f "$LAST_WALL" ] && [ "$new" = "$(cat "$LAST_WALL")" ]; then
+        continue
+    fi
+
+    echo "$new" > "$LAST_WALL"
+
+    hyprctl hyprpaper preload "$new"
+    sleep 0.2
+    hyprctl hyprpaper wallpaper ",$new"
+
+    sleep "$INTERVAL"
+done

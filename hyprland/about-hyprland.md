@@ -30,67 +30,43 @@ hypr/
 ## Random wallpaper (WIP)
 > This script cycles wallpapers in a pseudo-random pattern (never shows the same wallpaper twice in a row, hence pseudo-random).
 
-### 1. Copy [random_wallpaper](../hyprland/scripts/random_wallpaper) script inside your hypr/script folder
+### 1. Copy [random_wallpaper](../hyprland/scripts/wallpaper-daemon) script inside your hypr/script folder
 
 ### 2. Make it executable
 ```sh
-chmod +x ~/.config/hypr/scripts/random_wallpaper
+chmod +x ~/.config/hypr/scripts/wallpaper-daemon
 ```
 
-### 3. Create a service
+### 3. Create a daemon service
 
 ```sh
-micro ~/.config/systemd/user/random-wallpaper.service
+micro ~/.config/systemd/user/wallpaper-daemon.service
 ```
 
 ### 4. Paste inside
 
 ```toml
 [Unit]
-Description=Change wallpaper randomly using hyprpaper
-After=hyprpaper.service graphical-session.target
+Description=Simple wallpaper rotation daemon for hyprpaper
+After=hyprpaper.service
 Requires=hyprpaper.service
 PartOf=hypr-session.target
 
 [Service]
-Type=oneshot
-ExecStart=%h/.config/hypr/scripts/random_wallpaper
+Type=simple
+ExecStart=%h/.config/hypr/scripts/wallpaper-daemon
+Restart=always
+RestartSec=5s
 
 [Install]
 WantedBy=hypr-session.target
 ```
 
-### 5. Create a timer
-
-```sh
-micro ~/.config/systemd/user/random-wallpaper.timer
-```
-
-### 6. Paste inside
-
-```toml
-[Unit]
-Description=Periodic random wallpaper change
-PartOf=hypr-session.target
-
-[Timer]
-OnBootSec=2s
-OnUnitActiveSec=15m
-Unit=random-wallpaper.service
-Persistent=true
-
-[Install]
-WantedBy=hypr-session.target
-```
-
-### 7. Run
+### 5. Run
 
 ```sh
 systemctl --user daemon-reload
-systemctl --user enable --now random-wallpaper.timer
-systemctl --user start random-wallpaper.service
-systemctl --user status random-wallpaper.service
-# Should show 'Active: inactive (dead)"
+systemctl --user enable --now wallpaper-daemon.service
 ```
 
 After any future changes to the script:
