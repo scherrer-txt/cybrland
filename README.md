@@ -14,6 +14,9 @@
 > **Version:** v2.0.0  
 > **Status:** Stable (2026-04-08)  
 
+> ![WARNING]
+> hyprland is in the process of switching from hyprlang to lua language. This config won't work as intended with newer versions (v0.55.0+). Last compatible version of hyprland is v0.54.3 from 2026-03-27. I will either wait a month until the new lua-based hyprland is stable or switch to something more stable in itself, I can't be bothered.  
+
 <table>
   <tr>
     <td span><a href="INSTALL.md"><img alt="Install Guide" src="https://raw.githubusercontent.com/cybrcore/cybrcore/refs/heads/main/assets/buttons/button-install-guide.png" height=40px></a>
